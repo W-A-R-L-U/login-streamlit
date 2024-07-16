@@ -15,8 +15,8 @@ st.markdown("<h1 style='text-align:center'>Food selecty</h1>",unsafe_allow_html=
 with st.form("Login",clear_on_submit=True):
     usr=st.text_input("Username")
     pas=st.text_input("Password",type="password")
-    state=st.link_button("Login", "https://diet-recommendation-system.streamlit.app/")
-    state2=st.form_submit_button(on_click="https://diet-recommendation-system.streamlit.app/")
+    # state=st.link_button("Login", "https://diet-recommendation-system.streamlit.app/")
+    state2=st.form_submit_button()
     if state:
         if usr=="":
             st.warning("Fill the username")
@@ -24,5 +24,8 @@ with st.form("Login",clear_on_submit=True):
             st.warning("Don't act smart give the password")
         else:
             st.success("Redirecting...")
-            webbrowser.open("https://diet-recommendation-system.streamlit.app/")
+            st.experimental_rerun()
+            # webbrowser.open("https://diet-recommendation-system.streamlit.app/")
+if st.experimental_get_query_params().get("https://diet-recommendation-system.streamlit.app/", None) is None:
+    main()
 st.markdown("<p style='text-align:center'>New user <a href='http://localhost:8502/'>signup</a></p>",unsafe_allow_html=True)

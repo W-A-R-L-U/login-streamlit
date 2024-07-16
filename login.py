@@ -27,5 +27,5 @@ with st.form("Login",clear_on_submit=True):
             st.experimental_rerun()
             # webbrowser.open("https://diet-recommendation-system.streamlit.app/")
 if st.experimental_get_query_params().get("https://diet-recommendation-system.streamlit.app/", None) is None:
-    main()
+    None
 st.markdown("<p style='text-align:center'>New user <a href='http://localhost:8502/'>signup</a></p>",unsafe_allow_html=True)

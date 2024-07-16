@@ -16,6 +16,7 @@ with st.form("Login",clear_on_submit=True):
     usr=st.text_input("Username")
     pas=st.text_input("Password",type="password")
     state=st.link_button("Login", "https://diet-recommendation-system.streamlit.app/")
+    state2=st.form_submit_button()
     if state:
         if usr=="":
             st.warning("Fill the username")

@@ -15,7 +15,7 @@ st.markdown("<h1 style='text-align:center'>Food selecty</h1>",unsafe_allow_html=
 with st.form("Login",clear_on_submit=True):
     usr=st.text_input("Username")
     pas=st.text_input("Password",type="password")
-    state=st.form_submit_button("LOGIN")
+    state=st.link_button("Login", "https://diet-recommendation-system.streamlit.app/")
     if state:
         if usr=="":
             st.warning("Fill the username")
